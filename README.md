@@ -7,6 +7,7 @@ Para acceder a la aplicación:
 http://localhost:8080/
 
 Crear database:
+
 CREATE TABLE Usuarios (
 ID BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Nombre VARCHAR(100) NOT NULL,
@@ -37,6 +38,7 @@ FOREIGN KEY (LibroID) REFERENCES Libros(ID)
 );
 
 Ingreso de algunos libros:
+
 INSERT INTO Libros (Titulo, Autor, AnioPublicacion, Disponible) VALUES
 ('Cien años de soledad', 'Gabriel García Márquez', 1967, 1),
 ('Ficciones', 'Jorge Luis Borges', 1944, 1),
@@ -90,5 +92,6 @@ INSERT INTO Libros (Titulo, Autor, AnioPublicacion, Disponible) VALUES
 ('Los detectives salvajes', 'Roberto Bolaño', 1998, 1);
 
 Ingresar usuario administrador:
+
 INSERT INTO Usuarios (Nombre, Email, Pass, Rol) VALUES
 ('Admin', 'admin@gmail.com', '123456', 'Admin');
