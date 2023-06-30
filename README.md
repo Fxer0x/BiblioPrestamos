@@ -6,7 +6,7 @@ docker-compose up -d
 
 Para acceder a la aplicación:
 
-http://localhost:8080/
+http://localhost
 
 Crear database:
 
