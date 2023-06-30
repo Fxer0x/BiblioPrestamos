@@ -1,9 +1,11 @@
 # BiblioPrestamos
 
 Instrucciones para ejecutar el proyecto:
+
 docker-compose up -d
 
 Para acceder a la aplicación:
+
 http://localhost:8080/
 
 Crear database:
@@ -93,5 +95,4 @@ INSERT INTO Libros (Titulo, Autor, AnioPublicacion, Disponible) VALUES
 
 Ingresar usuario administrador:
 
-INSERT INTO Usuarios (Nombre, Email, Pass, Rol) VALUES
-('Admin', 'admin@gmail.com', '123456', 'Admin');
+INSERT INTO Usuarios (Nombre, Email, Pass, Rol) VALUES ('Admin', 'admin@gmail.com', '123456', 'Admin');
