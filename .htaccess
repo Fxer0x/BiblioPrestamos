@@ -1,0 +1,31 @@
+RewriteEngine On
+
+# Bloquear solicitudes TRACE y TRACK:
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F] 
+
+# Deshabilitar índices
+Options -Indexes
+
+# Prevención de la duplicación del sitio
+<IfModule mod_headers.c>
+    Header set X-Frame-Options: SAMEORIGIN
+</IfModule>
+
+# Establecer encabezado X-Content-Type-Options para prevenir la inyección de contenido malintencionado
+Header set X-Content-Type-Options nosniff
+
+# Deshabilitar la negociación de vistas múltiples
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+
+# Establecer encabezado Cache-Control para archivos estáticos
+<filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|webp|html|svg)$">
+    Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+
+# Configuración para no incluir "index.php" en la URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
